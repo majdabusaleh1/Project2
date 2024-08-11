@@ -1,0 +1,58 @@
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["tsconfig.json"],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "eslint:recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript",
+        "plugin:jsdoc/recommended",
+        "plugin:prefer-arrow/recommended"
+      ],
+      "rules": {
+        "@typescript-eslint/array-type": ["off"],
+        "arrow-parens": ["off"],
+        "deprecation/deprecation": "warn",
+        "import/no-extraneous-dependencies": [
+          "error",
+          { "devDependencies": true }
+        ],
+        "max-classes-per-file": ["off"],
+        "max-len": ["error", { "code": 140 }],
+        "no-console": ["error", { "allow": ["warn", "error"] }],
+        "no-empty": ["off"],
+        "no-non-null-assertion": "error",
+        "no-restricted-imports": ["error", { "patterns": ["rxjs/Rx"] }],
+        "object-literal-key-quotes": ["error", "as-needed"],
+        "prefer-arrow/prefer-arrow-functions": "off",
+        "quotes": ["error", "single"],
+        "@angular-eslint/no-output-on-prefix": "error",
+        "@angular-eslint/use-input-property-decorator": "error",
+        "@angular-eslint/use-output-property-decorator": "error",
+        "@angular-eslint/use-host-property-decorator": "error",
+        "@angular-eslint/no-input-rename": "error",
+        "@angular-eslint/no-output-rename": "error",
+        "@angular-eslint/use-lifecycle-interface": "error",
+        "@angular-eslint/use-pipe-transform-interface": "error",
+        "@angular-eslint/component-class-suffix": "error",
+        "@angular-eslint/directive-class-suffix": "error"
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {
+        // Your HTML template rules here
+      }
+    }
+  ]
+}
